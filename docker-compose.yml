@@ -6,9 +6,10 @@ services:
             - "3306:3306"
         command: --default-authentication-plugin=mysql_native_password
         environment:
-            MYSQL_DATABASE: dbname
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
+            MYSQL_ROOT_PASSWORD: SuperAdminReal1234!
+            MYSQL_DATABASE: odigos_db
+            MYSQL_USER: mroot
+            MYSQL_PASSWORD: SuperAdminReal1234!
         volumes:
             - ./dump:/docker-entrypoint-initdb.d
             - ./conf:/etc/mysql/conf.d
@@ -30,10 +31,11 @@ services:
         links: 
             - db:db
         ports:
-            - 8000:80
+            - 8183:80
         environment:
-            MYSQL_USER: root
-            MYSQL_PASSWORD: test
-            MYSQL_ROOT_PASSWORD: test 
+            MYSQL_USER:  mroot
+            MYSQL_PASSWORD: SuperAdminReal1234!
+            MYSQL_ROOT_PASSWORD: SuperAdminReal1234!
+            UPLOAD_LIMIT: 500M
 volumes:
     persistent:
