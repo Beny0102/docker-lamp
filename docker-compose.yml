@@ -37,5 +37,8 @@ services:
             MYSQL_PASSWORD: SuperAdminReal1234!
             MYSQL_ROOT_PASSWORD: SuperAdminReal1234!
             UPLOAD_LIMIT: 500M
+            # Para loguearse en otro servidor
+            # PMA_ARBITRARY: 1
+            # PMA_PORT: 3306
 volumes:
     persistent:
